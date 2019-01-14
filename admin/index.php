@@ -62,8 +62,8 @@ include("requiredFiles.php");
                                         <?php
                                         if(isset($_SESSION["error"]) && !empty($_SESSION["error"]))
                                         {
-                                            echo '<div class="alert alert-warning">
-                                           <strong>Warning!</strong>'.$_SESSION["error"].'</div>';
+                                            echo '<div class="alert alert-danger">
+                                           <strong>Warning!</strong> '.$_SESSION["error"].'</div>';
                                         }
                                         ?>
                                         <fieldset class="form-group position-relative has-icon-left mb-0">

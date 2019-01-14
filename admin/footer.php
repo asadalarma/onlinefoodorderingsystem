@@ -19,6 +19,7 @@
 <script src="app-assets/js/core/app.js" type="text/javascript"></script>
 <script src="app-assets/js/scripts/customizer.js" type="text/javascript"></script>
 <!-- END STACK JS-->
+<script src="app-assets/vendors/js/forms/tags/form-field.js" type="text/javascript"></script>
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="app-assets/js/scripts/pages/dashboard-ecommerce.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
