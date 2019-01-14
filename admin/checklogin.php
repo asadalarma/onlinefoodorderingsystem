@@ -5,7 +5,7 @@ if(isset($_POST["loggedIn"]))
     $email = mysqli_real_escape_string($conn,$_POST["email"]);
     $password = mysqli_real_escape_string($conn,$_POST["password"]);
 
-   // $checkloginquery='select * from users where email="'.$email.'" and password="'.md5($password).'"';
+    // $checkloginquery='select * from users where email="'.$email.'" and password="'.md5($password).'"';
     $checkloginquery="select * from users where email='".$email."' and password='".md5($password)."'";
     $checklogin_result = mysqli_query($conn,$checkloginquery);
     $count=mysqli_num_rows($checklogin_result);
