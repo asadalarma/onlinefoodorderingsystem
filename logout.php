@@ -1,0 +1,11 @@
+<?php
+include("customerrequiredfiles.php");
+/*unset($_SESSION["customer_id"]);
+unset($_SESSION["customer_name"]);
+unset($_SESSION["customer_email"]);
+unset($_SESSION["customer_username"]);
+unset($_SESSION["customer_user_type"]);*/
+session_unset();
+session_destroy();
+header('Location:index.php');
+?>

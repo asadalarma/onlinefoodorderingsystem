@@ -73,20 +73,20 @@ include("customerrequiredfiles.php");
                            <div class="widget-body">
                               <form method="post" action="authenticatecustomers.php">
                                   <?php
-                                  if(isset($_SESSION["error"]) && !empty($_SESSION["error"]))
+                                  if(isset($_SESSION["customerloginerror"]) && !empty($_SESSION["customerloginerror"]))
                                   {
                                       echo '<div class="alert alert-danger">
-                                           <strong>Danger!</strong> '.$_SESSION["error"].'</div>';
+                                           <strong>Danger!</strong> '.$_SESSION["customerloginerror"].'</div>';
                                   }
                                   ?>
                                  <div class="row">
                                     <div class="form-group col-sm-12">
                                        <label for="exampleInputEmail1">Email</label>
-                                       <input class="form-control" type="text" name="customer_email" placeholder="Email" id="email-login">
+                                       <input class="form-control" type="text" name="email" placeholder="Email" id="email-login">
                                     </div>
                                     <div class="form-group col-sm-12">
                                        <label for="exampleInputPassword1">Password</label>
-                                       <input type="password" name="customer_password" class="form-control" id="password-login" placeholder="Password">
+                                       <input type="password" name="password" class="form-control" id="password-login" placeholder="Password">
                                     </div>
                                  </div>
                                  <div class="row">
@@ -109,16 +109,16 @@ include("customerrequiredfiles.php");
                               <div class="widget-body">
                                   <form method="post" action="authenticatecustomers.php">
                                       <?php
-                                      if(isset($_SESSION["message"]) && !empty($_SESSION["message"]))
+                                      if(isset($_SESSION["cutomerregmessage"]) && !empty($_SESSION["cutomerregmessage"]))
                                       {
                                           echo '<div class="alert alert-info">
-                                           <strong>Success!</strong> '.$_SESSION["message"].'</div>';
+                                           <strong>Success!</strong> '.$_SESSION["cutomerregmessage"].'</div>';
                                       }
 
-                                      if(isset($_SESSION["error"]) && !empty($_SESSION["error"]))
+                                      if(isset($_SESSION["cutomerregerror"]) && !empty($_SESSION["cutomerregerror"]))
                                       {
                                           echo '<div class="alert alert-danger">
-                                           <strong>Danger!</strong> '.$_SESSION["error"].'</div>';
+                                           <strong>Danger!</strong> '.$_SESSION["cutomerregerror"].'</div>';
                                       }
                                       ?>
                                       <div class="row">
