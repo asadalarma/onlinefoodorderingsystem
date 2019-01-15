@@ -87,7 +87,7 @@ CREATE TABLE `users` (
   `username` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
-  `openhours` datetime DEFAULT NULL,
+  `openinghours` datetime DEFAULT NULL,
   `closinghours` datetime DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,

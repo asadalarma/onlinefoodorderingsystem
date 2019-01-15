@@ -1,3 +1,6 @@
+<?php
+include("customerrequiredfiles.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,15 +27,7 @@
         <?php include("header.php"); ?>
 
         <div class="page-wrapper">
-            <!--<div class="breadcrumb">
-                <div class="container">
-                    <ul>
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">Search results</a></li>
-                        <li>Profile</li>
-                    </ul>
-                </div>
-            </div>-->
+
             <section class="contact-page inner-page">
                 <div class="container">
                     <div class="row">
@@ -41,34 +36,96 @@
                             <h4>Restaurant Registration</h4>
                             <div class="widget">
                                 <div class="widget-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Restaurant Name</label>
-                                            <input class="form-control" type="text" name="name" id="example-text-input" placeholder="Restaurant Name"> </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email</label>
-                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"> </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Phone number</label>
-                                            <input class="form-control" type="tel" name="phone" id="example-tel-input" placeholder="Phone"> </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">URL</label>
-                                            <input class="form-control" type="url" name="url" id="example-url-input" placeholder="Enter email"> </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Open Hours</label>
-                                            <input class="form-control" value="" name="openingHours"> </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Closing Hours</label>
-                                            <input class="form-control" value="" name="closingHours"> </div>
-                                        <div class="form-group">
-                                            <label for="exampleTextarea">Example textarea</label>
-                                            <textarea class="form-control" name="textarea" id="exampleTextarea" rows="3"></textarea>
+                                    <form method="post" action="restaurant-register.php" enctype="multipart/form-data">
+                                        <?php
+                                        if(isset($_SESSION["restaurantregmessage"]) && !empty($_SESSION["restaurantregmessage"]))
+                                        {
+                                            echo '<div class="alert alert-info">
+                                           <strong>Success!</strong> '.$_SESSION["restaurantregmessage"].'</div>';
+                                        }
+
+                                        if(isset($_SESSION["restaurantregerror"]) && !empty($_SESSION["restaurantregerror"]))
+                                        {
+                                            echo '<div class="alert alert-danger">
+                                           <strong>Danger!</strong> '.$_SESSION["restaurantregerror"].'</div>';
+                                        }
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Restaurant Name</label>
+                                                    <input class="form-control" type="text" name="name" id="example-text-input" placeholder="Restaurant Name" required>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">File input</label>
-                                            <input type="file" name="inputFile" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"> <small id="fileHelp" class="form-text text-muted">Max file size 1MB.</small> </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Email</label>
+                                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Password</label>
+                                                    <input type="password" name="password" class="form-control" id="inputPassword1" placeholder="Password" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Phone number</label>
+                                                    <input class="form-control" type="tel" name="phone" id="example-tel-input" maxlength="13"  pattern="+[0-9]{5}[0-9]{7}[0-9]{1}" placeholder="Phone" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">URL</label>
+                                                        <input class="form-control" type="url" name="url" id="example-url-input" placeholder="url" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Open Hours</label>
+                                                        <input type="time" class="form-control" name="openinghours" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Closing Hours</label>
+                                                    <input type="time" class="form-control" name="closinghours" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="exampleInputFile">File input</label>
+                                                    <input type="file" name="inputFile" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" required> <small id="fileHelp" class="form-text text-muted">Max file size 20MB.</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <p>
-                                            <button type="submit" class="btn theme-btn">Submit</button>
+                                            <button type="submit" name="register_restaurant" class="btn theme-btn">Submit</button>
                                         </p>
                                     </form>
                                 </div>
