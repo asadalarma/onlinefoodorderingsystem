@@ -9,3 +9,24 @@
 <script src="js/jquery.isotope.min.js"></script>
 <script src="js/headroom.js"></script>
 <script src="js/foodpicky.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('li a').click(function(e) {
+            e.preventDefault();
+            $('a').removeClass('active');
+            $(this).addClass('active');
+
+        });
+    });
+
+
+  /*  $(document).ready(function() {
+        $('li a').each(function () {
+            if (window.location.href.indexOf($(this).find('a:first').attr('href')) > -1) {
+
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+        });
+    });*/
+
+</script>

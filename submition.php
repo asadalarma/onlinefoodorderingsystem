@@ -40,14 +40,16 @@ include("customerrequiredfiles.php");
                                         <?php
                                         if(isset($_SESSION["restaurantregmessage"]) && !empty($_SESSION["restaurantregmessage"]))
                                         {
-                                            echo '<div class="alert alert-info">
-                                           <strong>Success!</strong> '.$_SESSION["restaurantregmessage"].'</div>';
+                                            echo '<div class="alert alert-info alert-dismissible">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                     <strong>Success! </strong>'.$_SESSION["restaurantregmessage"].'</div>';
                                         }
 
                                         if(isset($_SESSION["restaurantregerror"]) && !empty($_SESSION["restaurantregerror"]))
                                         {
-                                            echo '<div class="alert alert-danger">
-                                           <strong>Danger!</strong> '.$_SESSION["restaurantregerror"].'</div>';
+                                            echo '<div class="alert alert-danger alert-dismissible">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                     <strong>Danger! </strong>'.$_SESSION["restaurantregerror"].'</div>';
                                         }
                                         ?>
                                         <div class="row">
@@ -119,7 +121,7 @@ include("customerrequiredfiles.php");
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="exampleInputFile">File input</label>
-                                                    <input type="file" name="inputFile" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" required> <small id="fileHelp" class="form-text text-muted">Max file size 20MB.</small>
+                                                    <input type="file" name="inputFile" class="form-control-file" id="exampleInputFile" required>
                                                 </div>
                                             </div>
                                         </div>

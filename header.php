@@ -14,9 +14,10 @@
                         <div class="dropdown-menu"> <a class="dropdown-item" href="restaurants.php">Search results</a> <a class="dropdown-item" href="profile.html">Profile page</a></div>
                     </li>
                     <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                        <div class="dropdown-menu"> <a class="dropdown-item" href="pricing.html">Pricing</a> <a class="dropdown-item" href="contact.html">Contact</a> <a class="dropdown-item" href="submition.php">Submit restaurant</a>
+                        <div class="dropdown-menu"> <a class="dropdown-item" href="pricing.html">Pricing</a> <a class="dropdown-item" href="contact.html">Contact</a>
                             <div class="dropdown-divider"></div> <a class="dropdown-item" href="checkout.html">Checkout</a> </div>
                     </li>
+                    '<li class="nav-item"> <a class="nav-link" href="submition.php">Register Restaurant</a></li>
                     <?php echo (isset($_SESSION["customer_name"]) ?  '<li class="nav-item"> <a class="nav-link" href="logout.php">Logout</a> </li>' : '<li class="nav-item"> <a class="nav-link" href="registration.php">Login / Register</a> </li>'); ?>
                 </ul>
             </div>
