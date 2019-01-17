@@ -10,14 +10,29 @@
 <script src="js/headroom.js"></script>
 <script src="js/foodpicky.min.js"></script>
 <script type="text/javascript">
-    $(function(){
+    /*$(function(){
         $('li a').click(function(e) {
             e.preventDefault();
             $('a').removeClass('active');
             $(this).addClass('active');
 
         });
-    });
+    });*/
+
+
+
+$(function() {
+  var href = window.location.href;
+  $('nav a').each(function(e,i) {
+    if (href.indexOf($(this).attr('href')) >= 0) {
+      $('a').removeClass('active');
+      $(this).addClass('active');
+    }
+  });
+});
+
+
+
 
 
   /*  $(document).ready(function() {
