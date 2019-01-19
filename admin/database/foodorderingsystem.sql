@@ -10,10 +10,32 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-01-14 01:10:33
+Date: 2019-01-19 19:26:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for customer_feedbacks
+-- ----------------------------
+DROP TABLE IF EXISTS `customer_feedbacks`;
+CREATE TABLE `customer_feedbacks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `restaurant_id` int(11) NOT NULL,
+  `rating` float(10,0) DEFAULT NULL,
+  `feedback` text,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of customer_feedbacks
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for deals
