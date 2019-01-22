@@ -13,7 +13,7 @@ if(isset($_POST["register_customerfeedback"]))
         header('Location:customer-feedback.php');
     }
 
-    $customerfeedbackquery = "INSERT INTO `customer_feedbacks` (`restaurant_id`, `rating`, `feedback`) VALUES ('" . $restaurant . "', '" . $rating . "', '" . $feedback . "')";
+    $customerfeedbackquery = "INSERT INTO `customer_feedbacks` (`user_id`,`restaurant_id`, `rating`, `feedback`) VALUES ('" . $_SESSION["customer_id"] . "','" . $restaurant . "', '" . $rating . "', '" . $feedback . "')";
 
     $customerfeedbackresult = mysqli_query($conn, $customerfeedbackquery);
     $count = mysqli_affected_rows($conn);
