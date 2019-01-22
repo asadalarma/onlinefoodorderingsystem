@@ -36,19 +36,44 @@ include("customerrequiredfiles.php");
                             <h4>Feedback</h4>
                             <div class="widget">
                                 <div class="widget-body">
-                                    <form method="post" action="restaurant-register.php" enctype="multipart/form-data">
+                                    <form method="post" action="customerfeedback-register.php" enctype="multipart/form-data">
+                                        <?php
+                                        if(isset($_SESSION["cutomerfeedbackmessage"]) && !empty($_SESSION["cutomerfeedbackmessage"])) {
+                                            echo '<div class="alert alert-info alert-dismissible">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                     <strong>Success! </strong>'.$_SESSION["cutomerfeedbackmessage"].'</div>';
+                                        }
+
+                                        if(isset($_SESSION["cutomerfeedbackerror"]) && !empty($_SESSION["cutomerfeedbackerror"])) {
+                                            echo '<div class="alert alert-danger alert-dismissible">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                     <strong>Danger! </strong>'.$_SESSION["cutomerfeedbackerror"].'</div>';
+                                        }
+                                        ?>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Select</label>
                                                     <div class="form-group">
-                                                        <select class="form-control" id="exampleSelect1">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
-                                                        </select>
+                                                        <?php
+                                                        $restaurantquery="select * from users where user_type='restaurant'";
+                                                        $restaurantquery_result = mysqli_query($conn,$restaurantquery);
+
+                                                        $count=mysqli_num_rows($restaurantquery_result);
+
+                                                        if($count) {
+                                                            echo '<select name="restaurant" class="form-control" id="exampleSelect1" required>';
+                                                            echo '<option value="">Select Restaurant</option>';
+                                                            while ($row = mysqli_fetch_assoc($restaurantquery_result)) {
+                                                             echo '<option value='.$row["id"].'>'.$row["name"].'</option>';
+                                                            }
+                                                            echo '</select>';
+                                                        }
+                                                        else
+                                                        {
+                                                            echo "please insert restaurant first";
+                                                        }
+                                                        ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -59,36 +84,36 @@ include("customerrequiredfiles.php");
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Rating</label>
                                                     <div class="clearfix"></div>
-                                                    <fieldset class="rating">
+                                                    <fieldset class="rating" aria-required="true">
                                                         <input type="radio" id="star5" name="rating" value="5" />
-                                                        <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                                        <label class="full" for="star5" title="Excellent - 5 stars"></label>
 
-                                                        <input type="radio" id="star4half" name="rating" value="4 and a half" />
-                                                        <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                        <input type="radio" id="star4half" name="rating" value="4.5" />
+                                                        <label class="half" for="star4half" title="Best - 4.5 stars"></label>
 
                                                         <input type="radio" id="star4" name="rating" value="4" />
-                                                        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                                        <label class="full" for="star4" title="Best - 4 stars"></label>
 
-                                                        <input type="radio" id="star3half" name="rating" value="3 and a half" />
-                                                        <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                        <input type="radio" id="star3half" name="rating" value="3.5" />
+                                                        <label class="half" for="star3half" title="Pretty Good - 3.5 stars"></label>
 
                                                         <input type="radio" id="star3" name="rating" value="3" />
-                                                        <label class="full" for="star3" title="Meh - 3 stars"></label>
+                                                        <label class="full" for="star3" title="Pretty Good - 3 stars"></label>
 
-                                                        <input type="radio" id="star2half" name="rating" value="2 and a half" />
-                                                        <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                        <input type="radio" id="star2half" name="rating" value="2.5" />
+                                                        <label class="half" for="star2half" title="Good - 2.5 stars"></label>
 
                                                         <input type="radio" id="star2" name="rating" value="2" />
-                                                        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                        <label class="full" for="star2" title="Good - 2 stars"></label>
 
-                                                        <input type="radio" id="star1half" name="rating" value="1 and a half" />
-                                                        <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                        <input type="radio" id="star1half" name="rating" value="1.5" />
+                                                        <label class="half" for="star1half" title="Poor - 1.5 stars"></label>
 
                                                         <input type="radio" id="star1" name="rating" value="1" />
-                                                        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                                        <label class="full" for="star1" title="Poor - 1 star"></label>
 
-                                                        <input type="radio" id="starhalf" name="rating" value="half" />
-                                                        <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                                        <input type="radio" id="starhalf" name="rating" value=".5" />
+                                                        <label class="half" for="starhalf" title="Poor - 0.5 stars"></label>
                                                     </fieldset>
                                                 </div>
                                             </div>
@@ -98,13 +123,13 @@ include("customerrequiredfiles.php");
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="exampleTextarea">Customer Feedback</label>
-                                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                                    <textarea name="feedback" class="form-control" id="exampleTextarea" rows="3"></textarea>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <p>
-                                            <button type="submit" name="register_restaurant" class="btn theme-btn">Submit</button>
+                                            <button type="submit" name="register_customerfeedback" class="btn theme-btn">Submit</button>
                                         </p>
                                     </form>
                                 </div>
