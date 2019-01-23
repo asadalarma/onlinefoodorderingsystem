@@ -14,7 +14,7 @@ if (isset($_POST["customer_register"])) {
     $password = isset($_POST["password"]) ? mysqli_real_escape_string($conn, $_POST["password"]) : null;
 
     //check the email address exist or not
-    $checkemailquery = "select * from users where email='$email'";
+    $checkemailquery = "select * from users where email='$email' and is_deleted=0";
 
     $checkemailresult = mysqli_query($conn, $checkemailquery);
     $countexistemail = mysqli_num_rows($checkemailresult);
@@ -46,7 +46,7 @@ if (isset($_POST["customer_loggedIn"])) {
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
-    $customerloginquery = "select * from users where email='" . $email . "' and password='" . md5($password) . "' and user_type = 'customer'";
+    $customerloginquery = "select * from users where email='" . $email . "' and password='" . md5($password) . "' and user_type = 'customer' and is_deleted=0";
     $customerlogin_result = mysqli_query($conn, $customerloginquery);
     $count = mysqli_num_rows($customerlogin_result);
 

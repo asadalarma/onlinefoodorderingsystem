@@ -56,7 +56,7 @@ include("customerrequiredfiles.php");
                                                     <label for="exampleInputEmail1">Select</label>
                                                     <div class="form-group">
                                                         <?php
-                                                        $restaurantquery="select * from users where user_type='restaurant'";
+                                                        $restaurantquery="select * from users where user_type='restaurant' and is_deleted=0";
                                                         $restaurantquery_result = mysqli_query($conn,$restaurantquery);
 
                                                         $count=mysqli_num_rows($restaurantquery_result);
