@@ -16,7 +16,11 @@ if (isset($_POST["loggedIn"])) {
         $_SESSION["username"] = $row["username"];
         $_SESSION["user_type"] = $row["user_type"];
 
-        if ($row["user_type"] == "restaurant" && $row["approval_status"] == 1) {
+        if ($row["user_type"] == "restaurant" && $row["approval_status"] == 3) {
+            $_SESSION["error"] = "Sorry, You are blocked by the admin . Please contact administrator....!";
+            header('Location:index.php');
+        }
+        elseif ($row["user_type"] == "restaurant" && $row["approval_status"] == 1) {
             $_SESSION["error"] = "Sorry, You are not approved by the admin . Please contact administrator....!";
             header('Location:index.php');
         } else {
