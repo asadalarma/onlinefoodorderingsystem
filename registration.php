@@ -112,7 +112,7 @@ include("customerrequiredfiles.php");
                                           </div>
                                           <div class="form-group col-sm-6">
                                               <label for="exampleInputPassword1">Password</label>
-                                              <input type="password" name="password" class="form-control" id="inputPassword1" placeholder="Password" required>
+                                              <input type="password" name="password" class="form-control" id="inputPassword1" placeholder="Password" minlength="6" required>
                                           </div>
                                       </div>
                                       <div class="row">
