@@ -101,6 +101,7 @@ CREATE TABLE `meal_deals` (
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -114,13 +115,14 @@ CREATE TABLE `users` (
   `closinghours` datetime DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
+  `approval_status` tinyint(3) DEFAULT '1' COMMENT 'Approval Status 1= Pending , 2=Approved , 3=Not Approved',
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of users

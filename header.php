@@ -18,7 +18,13 @@
                             <div class="dropdown-divider"></div> <a class="dropdown-item" href="checkout.html">Checkout</a> </div>
                     </li>
                    <?php echo (isset($_SESSION["customer_name"]) ? '<li class="nav-item"> <a class="nav-link" href="customer-feedback.php">Feedback</a></li>' : null ); ?>
-                    '<li class="nav-item"> <a class="nav-link" href="submition.php">Register Restaurant</a></li>
+                    <?php  if(isset($_SESSION["customer_user_type"]) === 'restaurant'){
+                       echo '<li class="nav-item"> <a class="nav-link" href="submition.php">Register Restaurant</a></li>';
+                    }
+                    if(isset($_SESSION["customer_user_type"]) != 'customer' && isset($_SESSION["customer_user_type"]) != 'restaurant'){
+                        echo '<li class="nav-item"> <a class="nav-link" href="submition.php">Register Restaurant</a></li>';
+                    }
+                    ?>
                     <?php echo (isset($_SESSION["customer_name"]) ?  '<li class="nav-item"> <a class="nav-link" href="logout.php">Logout</a> </li>' : '<li class="nav-item"> <a class="nav-link" href="registration.php">Login / Register</a> </li>'); ?>
                 </ul>
             </div>
