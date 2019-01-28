@@ -11,6 +11,12 @@
 
             <li class=" nav-item"><a href="<?php echo getadminurl(); ?>customers/index.php"><i class="ft-user"></i><span class="menu-title" data-i18n="">Customers</span></a>
             </li>
+
+            <li class=" nav-item"><a href="<?php echo getadminurl(); ?>restaurants/index.php"><i class="ft-user"></i><span class="menu-title" data-i18n="">Restaurants</span></a>
+            </li>
+
+            <li class=" nav-item"><a href="<?php echo getadminurl(); ?>admins/index.php"><i class="ft-user"></i><span class="menu-title" data-i18n="">Admins</span></a>
+            </li>
         </ul>
     </div>
 </div>
