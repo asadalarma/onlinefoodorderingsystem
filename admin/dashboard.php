@@ -12,8 +12,6 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
 
   <div class="app-content content">
     <div class="content-wrapper">
-      <div class="content-header row">
-      </div>
       <div class="content-body">
         <!-- Stats -->
         <div class="row">
