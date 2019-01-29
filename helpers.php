@@ -10,3 +10,7 @@ function getadminurl() {
     $url='/onlinefoodorderingsystem/admin/';
     return $url;
 }
+function imageurl($url){
+    $url='/onlinefoodorderingsystem/'.$url;
+    return $url;
+}
