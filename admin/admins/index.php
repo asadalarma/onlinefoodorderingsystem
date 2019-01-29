@@ -1,4 +1,4 @@
-<?php include("../requiredFiles.php")?>
+<?php include("../requiredFiles.php"); ?>
 <!-- - var navbarShadow = true-->
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">

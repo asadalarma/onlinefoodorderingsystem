@@ -1,4 +1,4 @@
-<?php include("../requiredFiles.php")?>
+<?php include("../requiredFiles.php"); ?>
 <!-- - var navbarShadow = true-->
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
@@ -31,6 +31,18 @@
                                     </ul>
                                 </div>
                             </div>
+                            <?php
+                            if(isset($_SESSION["error"]) && !empty($_SESSION["error"])) {
+                                echo '<div class="alert alert-danger alert-dismissible">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                     <strong>Warning! </strong>'.$_SESSION["error"].'</div>';
+                            }
+                            if(isset($_SESSION["message"]) && !empty($_SESSION["message"])) {
+                                echo '<div class="alert alert-info alert-dismissible">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                     <strong>Success! </strong>'.$_SESSION["message"].'</div>';
+                            }
+                            ?>
                             <div class="card-content collapse show">
                                 <div class="card-body card-dashboard">
 
