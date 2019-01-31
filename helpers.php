@@ -32,3 +32,16 @@ function getUserRecord($conn, $id)
     }
     return $row;
 }
+
+function checkOldPassword($conn, $password){
+    $getrecordquery = "select * from users where password='$password'";
+
+    $getrecordqueryresult = mysqli_query($conn, $getrecordquery);
+    $count = mysqli_num_rows($getrecordqueryresult);
+    if ($count) {
+        $row = $count;
+    } else {
+        $row = null;
+    }
+    return $row;
+}
