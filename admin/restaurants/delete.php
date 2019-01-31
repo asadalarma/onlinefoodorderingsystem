@@ -9,8 +9,7 @@ if (isset($_GET["id"])) {
     if($count){
         $_SESSION["message"] = "Deleted Successfully....!";
         header('Location:index.php');
-    }else
-    {
+    }else {
         $_SESSION["error"] = "Something Wrong....!";
         header('Location:index.php');
     }

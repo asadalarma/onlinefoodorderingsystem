@@ -83,7 +83,7 @@ include("customerrequiredfiles.php");
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Phone number</label>
-                                                    <input class="form-control" type="tel" name="phone" id="example-tel-input" maxlength="13"  pattern="+[0-9]{5}[0-9]{7}[0-9]{1}" placeholder="Phone" required>
+                                                    <input class="form-control" type="tel" name="phone" id="example-tel-input" maxlength="13"  pattern="^\+[0-9]{4}[0-9]{7}[0-9]{1}$" placeholder="Phone" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -93,7 +93,7 @@ include("customerrequiredfiles.php");
                                                 <div class="form-group">
                                                     <div class="form-group">
                                                         <label for="exampleInputEmail1">URL</label>
-                                                        <input class="form-control" type="url" name="url" id="example-url-input" placeholder="url" required>
+                                                        <input class="form-control" type="url" name="url" id="example-url-input" placeholder="url" pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$" required>
                                                     </div>
                                                 </div>
                                             </div>

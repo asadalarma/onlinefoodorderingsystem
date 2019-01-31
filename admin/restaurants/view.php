@@ -20,6 +20,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : null; ?>
                         <div class="card">
 
                             <div class="card-header">
+                                <h4 class="card-title">Restaurants View</h4>
                                 <div class="heading-elements">
                                     <div class="btn-group">
                                         <a href="edit.php?id=<?php echo $id ?>"

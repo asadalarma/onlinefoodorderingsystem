@@ -107,8 +107,7 @@ include("customerrequiredfiles.php");
                                           </div>
                                           <div class="form-group col-sm-6">
                                               <label for="exampleInputEmail1">Phone number</label>
-                                              <input class="form-control" type="tel" name="phone" placeholder="Phone" maxlength="13" id="tel-input-3" pattern="+[0-9]{5}[0-9]{7}[0-9]{1}"
-                                                      required>
+                                              <input class="form-control" type="tel" name="phone" placeholder="Phone" maxlength="13" id="tel-input-3" pattern="^\+[0-9]{4}[0-9]{7}[0-9]{1}$" title="The phone must be in this format +920001234567" required>
                                           </div>
                                           <div class="form-group col-sm-6">
                                               <label for="exampleInputPassword1">Password</label>
