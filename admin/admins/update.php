@@ -44,7 +44,8 @@ if (isset($_POST["editadmins"])) {
     $updatequery = "update users set name='$name',email='$email'$newpasswordquery,username='$username',phone='$phone',address='$address' where id=$userid";
     $updatequery_result = mysqli_query($conn, $updatequery);
     $count = mysqli_affected_rows($conn);
-    if ($count) {
+
+    if ($count == 0 || $count == 1) {
         $_SESSION["message"] = "Updated Successfully....!";
         header('Location:index.php');
     } else {
