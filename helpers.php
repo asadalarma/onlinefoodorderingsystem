@@ -7,21 +7,39 @@ function getCurrentDirectory()
     return substr($path, $position);
 }
 
+function getParentFolderName($slash=null){
+   return dirname($_SERVER["PHP_SELF"], 3).$slash;
+}
+
 function getadminurl()
 {
-    $url = '/onlinefoodorderingsystem/admin/';
+    $url = getParentFolderName('/').'admin/';
     return $url;
 }
 
 function imageurl($url)
 {
-    $url = '/onlinefoodorderingsystem/' . $url;
+    $url = getParentFolderName('/').$url;
     return $url;
 }
 
 function getUserRecord($conn, $id)
 {
-    $getrecordquery = "select * from users where id=$id";
+    $getrecordquery = "select * from users where id=$id and is_deleted=0";
+
+    $getrecordqueryresult = mysqli_query($conn, $getrecordquery);
+    $count = mysqli_num_rows($getrecordqueryresult);
+    if ($count) {
+        $row = mysqli_fetch_assoc($getrecordqueryresult);
+    } else {
+        $row = null;
+    }
+    return $row;
+}
+
+function getDealsRecord($conn, $id)
+{
+    $getrecordquery = "select * from deals where id=$id and is_deleted=0";
 
     $getrecordqueryresult = mysqli_query($conn, $getrecordquery);
     $count = mysqli_num_rows($getrecordqueryresult);
@@ -34,7 +52,7 @@ function getUserRecord($conn, $id)
 }
 
 function checkOldPassword($conn, $password){
-    $getrecordquery = "select * from users where password='$password'";
+    $getrecordquery = "select * from users where password='$password' and is_deleted=0";
 
     $getrecordqueryresult = mysqli_query($conn, $getrecordquery);
     $count = mysqli_num_rows($getrecordqueryresult);

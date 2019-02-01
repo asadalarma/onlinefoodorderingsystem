@@ -17,6 +17,9 @@
 
             <li class=" nav-item"><a href="<?php echo getadminurl(); ?>admins/index.php"><i class="ft-user"></i><span class="menu-title" data-i18n="">Admins</span></a>
             </li>
+
+            <li class=" nav-item"><a href="<?php echo getadminurl(); ?>deals/index.php"><i class="ft-user"></i><span class="menu-title" data-i18n="">Deals</span></a>
+            </li>
         </ul>
     </div>
 </div>
