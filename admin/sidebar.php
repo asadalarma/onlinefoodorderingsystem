@@ -20,6 +20,9 @@
 
             <li class=" nav-item"><a href="<?php echo getadminurl(); ?>deals/index.php"><i class="ft-user"></i><span class="menu-title" data-i18n="">Deals</span></a>
             </li>
+
+            <li class=" nav-item"><a href="<?php echo getadminurl(); ?>meals/index.php"><i class="ft-user"></i><span class="menu-title" data-i18n="">Meals</span></a>
+            </li>
         </ul>
     </div>
 </div>
