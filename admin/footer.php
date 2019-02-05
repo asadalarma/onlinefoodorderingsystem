@@ -32,6 +32,8 @@
 <script src="<?php echo getadminurl(); ?>app-assets/js/core/app-menu.js" type="text/javascript"></script>
 <script src="<?php echo getadminurl(); ?>app-assets/js/core/app.js" type="text/javascript"></script>
 <script src="<?php echo getadminurl(); ?>app-assets/js/scripts/customizer.js" type="text/javascript"></script>
+<script src="<?php echo getadminurl(); ?>app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
+<script src="<?php echo getadminurl(); ?>app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
 <!-- END STACK JS-->
 <script src="<?php echo getadminurl(); ?>app-assets/vendors/js/forms/tags/form-field.js" type="text/javascript"></script>
 <!-- BEGIN PAGE LEVEL JS-->

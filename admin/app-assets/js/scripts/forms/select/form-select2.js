@@ -42,6 +42,10 @@
       placeholder: "Select State",
     });
 
+    $(".deals-placeholder-multiple").select2({
+        placeholder: "Select Deals",
+    });
+
     // Hiding the search box
     $(".hide-search").select2({
       minimumResultsForSearch: Infinity

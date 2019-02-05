@@ -48,6 +48,22 @@ $id = isset($_GET['id']) ? $_GET['id'] : null; ?>
                                                 <td class="width-200">Restaurant Name</td>
                                                 <td class="width-800"><?php echo (isset($row["restaurantname"]) ? $row["restaurantname"] : null); ?></td>
                                             </tr>
+                                            <?php $assigneddeals = getAssignedDeals($conn,$row["mealid"]);
+                                            if(is_array($assigneddeals))
+                                            { ?>
+                                            <tr>
+                                                <td class="width-200">Assign Deals</td>
+                                                <td class="width-800"><?php
+                                                    foreach($assigneddeals as $key => $assigneddeal){
+                                                        if($key == count($assigneddeals) - 1){
+                                                            echo $assigneddeal["dealname"];
+                                                        }else {
+                                                            echo $assigneddeal["dealname"].',';
+                                                        }
+                                                    }
+                                                    ?></td>
+                                            </tr>
+                                            <?php } ?>
                                             <tr>
                                                 <td class="width-200">Meal Name</td>
                                                 <td class="width-800"><?php echo (isset($row["mealname"]) ? $row["mealname"] : null); ?></td>

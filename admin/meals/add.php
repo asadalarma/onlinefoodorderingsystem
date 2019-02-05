@@ -55,6 +55,27 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
+                                                        <label for="deal">Assign Deals</label>
+                                                        <select class="deals-placeholder-multiple form-control border-primary" name="assigndeals[]" id="assigndeals"  multiple="multiple">
+                                                            <?php
+                                                            $dealsquery = "select * from deals where is_deleted=0";
+                                                            $dealsquery_result = mysqli_query($conn, $dealsquery);
+                                                            $count = mysqli_num_rows($dealsquery_result);
+                                                            if ($count) {
+                                                                while($row = mysqli_fetch_assoc($dealsquery_result)){
+                                                                    echo '<option value="'.$row["id"].'">'.$row["name"].'</option>';
+                                                                }
+                                                            }else {
+                                                                echo '<option value="">Please Register Deals First</option>';
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
                                                         <label for="name">Name</label>  <span class="required">*</span>
                                                         <input class="form-control border-primary" placeholder="Name" name="name" type="text" id="name" required>
                                                     </div>
