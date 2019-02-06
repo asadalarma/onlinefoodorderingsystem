@@ -33,7 +33,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="restaurant">Name</label>  <span class="required">*</span>
+                                                        <label for="restaurant">Restaurant Name</label>  <span class="required">*</span>
                                                         <select class="form-control border-primary" name="restaurant" id="restaurant" required>
                                                             <?php
                                                             $restaurantquery = "select * from users where is_deleted=0 and user_type='restaurant'";
@@ -66,7 +66,7 @@
                                                                     echo '<option value="'.$row["id"].'">'.$row["name"].'</option>';
                                                                 }
                                                             }else {
-                                                                echo '<option value="">Please Register Deals First</option>';
+                                                                echo '<option value="">Please Assign Deals First</option>';
                                                             }
                                                             ?>
                                                         </select>
@@ -86,6 +86,14 @@
                                                     <div class="form-group">
                                                         <label for="description">Description</label>  <span class="required">*</span>
                                                         <textarea class="form-control border-primary" placeholder="Description" name="description" id="description" required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="price">Price</label>  <span class="required">*</span>
+                                                        <input class="form-control border-primary" placeholder="Price" name="price" type="text" id="price" required>
                                                     </div>
                                                 </div>
                                             </div>

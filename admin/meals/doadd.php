@@ -5,6 +5,7 @@ if (isset($_POST["addmeal"])) {
     $restaurant = isset($_POST["restaurant"]) ? mysqli_real_escape_string($conn, $_POST["restaurant"]) : null;
     $name = isset($_POST["name"]) ? mysqli_real_escape_string($conn, $_POST["name"]) : null;
     $description = isset($_POST["description"]) ? mysqli_real_escape_string($conn, $_POST["description"]) : null;
+    $price = isset($_POST["price"]) ? mysqli_real_escape_string($conn, $_POST["price"]) : null;
     $assigndeals = isset($_POST["assigndeals"]) ?  $_POST["assigndeals"] : null;
 
     $filename = $_FILES["inputFile"]["name"];
@@ -17,7 +18,7 @@ if (isset($_POST["addmeal"])) {
     if (move_uploaded_file($filename_tempname, $target_file)) {
 
         $target_filename = 'meal-images/' . $file_with_time;
-        $dealregisterquery = "INSERT INTO `meals` (`restaurant_id`,`name`, `description`, `image`) VALUES ('".$restaurant."','".$name."','".$description."','".$target_filename."');";
+        $dealregisterquery = "INSERT INTO `meals` (`restaurant_id`,`name`, `description`, `image`, `price`) VALUES ('".$restaurant."','".$name."','".$description."','".$target_filename."','".$price."');";
 
         $dealregisterresult = mysqli_query($conn, $dealregisterquery);
         $mealid=mysqli_insert_id($conn);
