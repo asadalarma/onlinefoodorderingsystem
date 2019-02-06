@@ -11,7 +11,12 @@ function getParentFolderName($slash=null){
     if(dirname($_SERVER["PHP_SELF"], 3) == '\\'){
       $dir =  dirname($_SERVER["PHP_SELF"], 2);
     }else {
-        $dir =  dirname($_SERVER["PHP_SELF"], 3);
+        if(getCurrentDirectory() == "admin"){
+            $dir =  dirname($_SERVER["PHP_SELF"], 2);
+        }else{
+            $dir =  dirname($_SERVER["PHP_SELF"], 3);
+        }
+
     }
    return $dir.$slash;
 }
