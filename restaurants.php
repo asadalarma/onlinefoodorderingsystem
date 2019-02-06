@@ -40,8 +40,7 @@ include("customerrequiredfiles.php");
                     <div class="row">
 
                         <div class="col-xs-12 col-sm-7 col-md-12 ml-10 col-lg-9">
-                            <?php     $restaurantquery = "select * from users where user_type='restaurant' and is_deleted=0";
-
+                            <?php $restaurantquery = "select * from users where user_type='restaurant' and is_deleted=0";
                             $restaurantqueryresult = mysqli_query($conn, $restaurantquery);
                             $count = mysqli_num_rows($restaurantqueryresult);
                             if($count){
@@ -63,7 +62,7 @@ include("customerrequiredfiles.php");
                                             <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
                                                 <div class="right-content bg-white">
                                                     <div class="right-review">
-                                                        <a href="profile.html" class="btn theme-btn-dash">View Menu</a> </div>
+                                                        <a href="restaurantdetails.php?id=<?php echo $row["id"]; ?>" class="btn theme-btn-dash">View Menu</a> </div>
                                                 </div>
                                                 <!-- end:right info -->
                                             </div>
@@ -77,33 +76,6 @@ include("customerrequiredfiles.php");
                             ?>
 
                             <!-- end:Restaurant entry -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="app-section">
-                <div class="app-wrap">
-                    <div class="container">
-                        <div class="row text-img-block text-xs-left">
-                            <div class="container">
-                                <div class="col-xs-12 col-sm-6 hidden-xs-down right-image text-center">
-                                    <figure> <img src="images/app.png" alt="Right Image"> </figure>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 left-text">
-                                    <h3>The Best Food Delivery App</h3>
-                                    <p>Now you can make food happen pretty much wherever you are thanks to the free easy-to-use Food Delivery &amp; Takeout App.</p>
-                                    <div class="social-btns">
-                                        <a href="#" class="app-btn apple-button clearfix">
-                                            <div class="pull-left"><i class="fa fa-apple"></i> </div>
-                                            <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">App Store</span> </div>
-                                        </a>
-                                        <a href="#" class="app-btn android-button clearfix">
-                                            <div class="pull-left"><i class="fa fa-android"></i> </div>
-                                            <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">Play store</span> </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

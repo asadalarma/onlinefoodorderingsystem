@@ -152,3 +152,15 @@ function getMealsRecordArray($conn,$id){
 
     return $response;
 }
+
+function getRestaurantDetails($conn,$id){
+$restaurantquery = "select * from users where user_type='restaurant' and is_deleted=0 and id=$id";
+$restaurantqueryresult = mysqli_query($conn, $restaurantquery);
+$count = mysqli_num_rows($restaurantqueryresult);
+    if ($count) {
+        $row = mysqli_fetch_assoc($restaurantqueryresult);
+    } else {
+        $row = null;
+    }
+    return $row;
+}

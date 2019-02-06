@@ -1959,7 +1959,7 @@ a.more-link {
 
 .menu-widget .food-item .rest-descr {
     padding-left: 115px;
-    padding-top: 0;
+    padding-top: 34px;
 }
 
 .menu-widget .food-item .rest-descr h6 a {
@@ -2766,4 +2766,8 @@ a[aria-expanded=false] .fa-angle-down {
 .rating > input:checked + label:hover, /* hover current star when changing rating */
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+.trash{
+    color: #f30
+}
