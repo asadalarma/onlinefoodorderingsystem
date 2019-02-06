@@ -29,7 +29,9 @@ function getadminurl()
 
 function imageurl($url)
 {
-    $url = getParentFolderName('/').$url;
+    $uri = $_SERVER['REQUEST_URI'];
+    $parts = explode('/',$uri);
+    $url = '/'.$parts[1].'/'.$url;
     return $url;
 }
 
