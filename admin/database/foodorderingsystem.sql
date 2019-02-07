@@ -86,12 +86,14 @@ CREATE TABLE `meals` (
 -- Table structure for meal_deals
 -- ----------------------------
 DROP TABLE IF EXISTS `meal_deals`;
+
 CREATE TABLE `meal_deals` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `meal_id` int(11) NOT NULL,
   `deal_id` int(11) NOT NULL,
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of meal_deals
@@ -127,4 +129,4 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'admin', 'admin@example.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin user', null, null, null, null, null, null, null, null, null, null, '0');
+insert  into `users`(`id`,`name`,`email`,`password`,`user_type`,`username`,`phone`,`url`,`openinghours`,`closinghours`,`image`,`address`,`approval_status`,`created_by`,`updated_by`,`created_at`,`updated_at`,`is_deleted`) values (1,'admin','admin@example.com','21232f297a57a5a743894a0e4a801fc3','admin','admin user','+920001234567',NULL,NULL,NULL,NULL,'Shah rah e faisal',1,NULL,NULL,NULL,NULL,0)
