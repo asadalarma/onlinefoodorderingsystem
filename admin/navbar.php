@@ -6,7 +6,7 @@
                 <li class="nav-item">
                     <a class="navbar-brand" href="index.php">
                         <img class="brand-logo" alt="stack admin logo" src="<?php echo getadminurl(); ?>app-assets/images/logo/stack-logo.png">
-                        <h2 class="brand-text">Stack</h2>
+                        <!-- <h2 class="brand-text">Stack</h2> -->
                     </a>
                 </li>
                 <li class="nav-item d-md-none">

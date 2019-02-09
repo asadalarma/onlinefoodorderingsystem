@@ -413,16 +413,16 @@ input:focus ~ .bg-primary {
         }
       } */
 .btn-primary {
-  border-color: #00A5A8 !important;
-  background-color: #00B5B8 !important;
+  border-color: #e8500e !important;
+  background-color: #e8500e !important;
   color: #FFFFFF; }
   .btn-primary:hover {
-    border-color: #00AEB1 !important;
-    background-color: #26C0C3 !important;
+    border-color: #e8500e !important;
+    background-color: #e8500e !important;
     color: #FFF !important; }
   .btn-primary:focus, .btn-primary:active {
-    border-color: #00A5A8 !important;
-    background-color: #009DA0 !important;
+    border-color: #e8500e !important;
+    background-color: #e8500e !important;
     color: #FFF !important; }
 
 .btn-outline-primary {

@@ -498,6 +498,7 @@ hr {
     padding-bottom: 10%;
     text-align: center;
     position: relative;
+	background: url("../images/main_banner.jpg") center center / cover no-repeat !important;
 }
 
 .hero h1 {
@@ -1525,6 +1526,7 @@ footer li a {
 .inner-page-hero {
     padding-top: 5%;
     padding-bottom: 5%;
+	background: url("../images/inner_banner.png") center center / cover no-repeat !important;
 }
 
 
